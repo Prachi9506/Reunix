@@ -12,7 +12,33 @@ type CountersType = {
   placement: number;
 };
 
+type Testimonial = {
+  name: string;
+  role: string;
+  year: string;
+  content: string;
+  avatar: string;
+};
+
 export default function LandingPage() {
+  const testimonials: Testimonial[] = [
+    {
+      name: 'Sarah Johnson', role: 'Software Engineer, Google', year: '2019 Graduate',
+      content: 'The mentorship I received through Reunix was invaluable. It helped me land my dream job and continues to guide my career growth.',
+      avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2'
+    },
+    {
+      name: 'Michael Chen', role: 'Product Manager, Microsoft', year: '2017 Graduate',
+      content: 'Being able to give back to juniors while expanding my own network has been incredibly rewarding. Reunix makes mentoring seamless.',
+      avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2'
+    },
+    {
+      name: 'Emily Davis', role: 'Current Student, CS', year: 'Class of 2025',
+      content: 'The career guidance and real industry insights from alumni on Reunix have been game-changing for my internship applications.',
+      avatar: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2'
+    }
+  ];
+
   const [counters, setCounters] = useState<CountersType>({
     alumni: 0,
     students: 0,
@@ -20,7 +46,7 @@ export default function LandingPage() {
     placement: 0,
   });
 
-  const [selectedStory, setSelectedStory] = useState<typeof testimonials[0] | null>(null);
+  const [selectedStory, setSelectedStory] = useState<Testimonial | null>(null);
 
   useEffect(() => {
     const target: CountersType = { alumni: 10000, students: 25000, sessions: 500, placement: 95 };
@@ -54,24 +80,6 @@ export default function LandingPage() {
     { step: 'Phase 1', title: 'Kickstart', description: 'Alumni database, self-registration, basic profile sync & AI mentorship', color: 'bg-blue-600 dark:bg-blue-500' },
     { step: 'Phase 2', title: 'Engage', description: 'Hidden opportunities, resume generator, motivational wall, events & community space', color: 'bg-green-600 dark:bg-green-500' },
     { step: 'Phase 3', title: 'Lead', description: 'Startup & innovation zone, admin dashboards, AI analytics, gamification & rewards', color: 'bg-purple-600 dark:bg-purple-500' },
-  ];
-
-  const testimonials = [
-    {
-      name: 'Sarah Johnson', role: 'Software Engineer, Google', year: '2019 Graduate',
-      content: 'The mentorship I received through Reunix was invaluable. It helped me land my dream job and continues to guide my career growth.',
-      avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2'
-    },
-    {
-      name: 'Michael Chen', role: 'Product Manager, Microsoft', year: '2017 Graduate',
-      content: 'Being able to give back to juniors while expanding my own network has been incredibly rewarding. Reunix makes mentoring seamless.',
-      avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2'
-    },
-    {
-      name: 'Emily Davis', role: 'Current Student, CS', year: 'Class of 2025',
-      content: 'The career guidance and real industry insights from alumni on Reunix have been game-changing for my internship applications.',
-      avatar: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2'
-    }
   ];
 
   return (
@@ -136,8 +144,8 @@ export default function LandingPage() {
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
-              <div key={index} className="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
-                <div className={w-12 h-12 rounded-lg ${feature.color} flex items-center justify-center mb-6 transition-transform group-hover:scale-110}>
+              <div key={index} className="group bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
+                <div className={`w-12 h-12 rounded-lg ${feature.color} flex items-center justify-center mb-6 transition-transform group-hover:scale-110`}>
                   <IconComponent className="h-6 w-6"/>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">{feature.title}</h3>
@@ -157,9 +165,9 @@ export default function LandingPage() {
         <div className="flex flex-col md:flex-row justify-between max-w-6xl mx-auto space-y-8 md:space-y-0 md:space-x-8">
           {roadmap.map((item, index) => (
             <div key={index} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg flex-1 overflow-hidden">
-              <img src={https://picsum.photos/seed/${index}/600/300} alt={item.title} className="w-full h-40 object-cover"/>
+              <img src={`https://picsum.photos/seed/${index}/600/300`} alt={item.title} className="w-full h-40 object-cover"/>
               <div className="p-6">
-                <div className={w-12 h-12 ${item.color} rounded-full flex items-center justify-center text-white font-bold mb-4}>{item.step}</div>
+                <div className={`w-12 h-12 ${item.color} rounded-full flex items-center justify-center text-white font-bold mb-4`}>{item.step}</div>
                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
               </div>
@@ -193,7 +201,7 @@ export default function LandingPage() {
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 italic mb-2 truncate">"{t.content}"</p>
                 <div className="flex items-center">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 text-yellow-400 fill-current"/> )}
+                  {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 text-yellow-400 fill-current"/> )} 
                 </div>
               </div>
             ))}
