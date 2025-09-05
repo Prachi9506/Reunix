@@ -270,7 +270,8 @@ export default function LandingPage() {
         .animate-fadeInUp {
           animation: fadeInUp 1s ease forwards;
         }
-      `}</style>
+      `}</style> 
+      
 
     </div>
   );
