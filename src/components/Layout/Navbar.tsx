@@ -27,6 +27,7 @@ export default function Navbar() {
     setIsMenuOpen(false);
   };
 
+// <<<<<<< second
   const navItems = user
     ? [
         { name: 'Dashboard', href: '/dashboard', icon: User },
@@ -52,19 +53,35 @@ export default function Navbar() {
         </Link>
       );
     });
-
+<!-- ======= -->
+  const navItems = user ? [
+    { name: 'Dashboard', href: '/dashboard', icon: User },
+    { name: 'Mentorship', href: '/mentorship', icon: Users },
+    { name: 'Events', href: '/events', icon: Calendar },
+    { name: 'Jobs', href: '/jobs', icon: Briefcase },
+    { name: 'Community', href: '/community', icon: MessageSquare },
+    { name: 'Success Stories', href: 'https://prachi9506.github.io/Success-Stories-template-can-be-used-in-other-projects-/', icon: User }
+  ] : [];
+<!-- >>>>>>> main
+ -->
   return (
     <nav className="bg-gray-50 dark:bg-gray-900 shadow-lg sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          {/* Logo */}
+          {/* Logo */} 
           <div className="flex items-center">
+<!-- <<<<<<< second -->
             <Link
               to="/"
               className="flex items-center space-x-2 transition-transform duration-200 transform hover:scale-105"
             >
               <GraduationCap className="h-8 w-8 text-cyan-500" />
               <span className="text-xl font-bold text-gray-900 dark:text-white">ReUnix</span>
+=======
+            <Link to="/" className="flex items-center space-x-2">
+              <GraduationCap className="h-8 w-8 text-blue-600" />
+              <span className="text-xl font-bold text-gray-900">ReUnix</span>
+<!-- >>>>>>> main -->
             </Link>
           </div>
 

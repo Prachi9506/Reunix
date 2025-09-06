@@ -25,9 +25,9 @@ export default function CommunityPage() {
   const posts = [
     {
       id: 1,
-      author: 'John Smith',
+      author: 'Prachi Sharma',
       role: 'Senior Software Engineer at Google',
-      avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2',
+      avatar: 'https://t4.ftcdn.net/jpg/06/59/13/31/360_F_659133125_S0VAnb5NNknokdB47K61zDsczWgZJTMf.jpg',
       timeAgo: '2 hours ago',
       type: 'blog',
       title: 'My Journey from College to Google: Lessons Learned',
@@ -39,9 +39,9 @@ export default function CommunityPage() {
     },
     {
       id: 2,
-      author: 'Maria Garcia',
+      author: 'Payal Goswami',
       role: 'Product Manager at Microsoft',
-      avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2',
+      avatar: 'https://t4.ftcdn.net/jpg/06/59/13/31/360_F_659133125_S0VAnb5NNknokdB47K61zDsczWgZJTMf.jpg',
       timeAgo: '1 day ago',
       type: 'video',
       title: 'Product Management 101: What I Wish I Knew Earlier',
@@ -53,9 +53,51 @@ export default function CommunityPage() {
     },
     {
       id: 3,
-      author: 'David Wilson',
+      author: 'Naitik Gupta',
       role: 'Data Scientist at Netflix',
-      avatar: 'https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2',
+      avatar: 'https://t4.ftcdn.net/jpg/06/59/13/31/360_F_659133125_S0VAnb5NNknokdB47K61zDsczWgZJTMf.jpg',
+      timeAgo: '3 days ago',
+      type: 'podcast',
+      title: 'The Future of AI in Entertainment',
+      content: 'Discussing how machine learning is revolutionizing content recommendation and personalization...',
+      likes: 89,
+      comments: 34,
+      shares: 22,
+      tags: ['AI', 'Machine Learning', 'Netflix', 'Data Science']
+    },
+    {
+      id: 4,
+      author: 'Piyush Goel',
+      role: 'Senior Software Engineer at Google',
+      avatar: 'https://t4.ftcdn.net/jpg/06/59/13/31/360_F_659133125_S0VAnb5NNknokdB47K61zDsczWgZJTMf.jpg',
+      timeAgo: '2 hours ago',
+      type: 'blog',
+      title: 'My Journey from College to Google: Lessons Learned',
+      content: 'When I graduated 5 years ago, I never imagined I would be working at Google. Here are the key lessons that helped me get here...',
+      likes: 45,
+      comments: 12,
+      shares: 8,
+      tags: ['Career', 'Google', 'Software Engineering']
+    },
+    {
+      id: 5,
+      author: 'Shivank Tyagi',
+      role: 'Product Manager at Microsoft',
+      avatar: 'https://t4.ftcdn.net/jpg/06/59/13/31/360_F_659133125_S0VAnb5NNknokdB47K61zDsczWgZJTMf.jpg',
+      timeAgo: '1 day ago',
+      type: 'video',
+      title: 'Product Management 101: What I Wish I Knew Earlier',
+      content: 'A 15-minute video sharing insights about transitioning from engineering to product management...',
+      likes: 67,
+      comments: 23,
+      shares: 15,
+      tags: ['Product Management', 'Career Transition', 'Microsoft']
+    },
+    {
+      id: 6,
+      author: 'Prakhar',
+      role: 'Data Scientist at Netflix',
+      avatar: 'https://t4.ftcdn.net/jpg/06/59/13/31/360_F_659133125_S0VAnb5NNknokdB47K61zDsczWgZJTMf.jpg',
       timeAgo: '3 days ago',
       type: 'podcast',
       title: 'The Future of AI in Entertainment',
@@ -69,25 +111,25 @@ export default function CommunityPage() {
 
   const successStories = [
     {
-      name: 'Priya Sharma',
+      name: 'Prachi Sharma',
       achievement: 'Landed SDE role at Amazon',
       story: 'With guidance from alumni mentors, I improved my coding skills and aced the technical interviews.',
-      avatar: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2',
+      avatar: 'https://t4.ftcdn.net/jpg/06/59/13/31/360_F_659133125_S0VAnb5NNknokdB47K61zDsczWgZJTMf.jpg',
       mentor: 'John Smith'
     },
     {
       name: 'Rahul Patel',
       achievement: 'Started successful startup',
       story: 'Alumni network helped me find co-founders and initial funding for my EdTech startup.',
-      avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2',
+      avatar: 'https://t4.ftcdn.net/jpg/06/59/13/31/360_F_659133125_S0VAnb5NNknokdB47K61zDsczWgZJTMf.jpg',
       mentor: 'Maria Garcia'
     }
   ];
 
   const leaderboard = [
-    { name: 'John Smith', points: 2450, badge: 'Top Mentor', avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2' },
-    { name: 'Maria Garcia', points: 2180, badge: 'Community Leader', avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2' },
-    { name: 'David Wilson', points: 1950, badge: 'Knowledge Sharer', avatar: 'https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2' }
+    { name: 'Prachi Sharma', points: 2450, badge: 'Top Mentor', avatar: 'https://t4.ftcdn.net/jpg/06/59/13/31/360_F_659133125_S0VAnb5NNknokdB47K61zDsczWgZJTMf.jpg' },
+    { name: 'Payal Goswami', points: 2180, badge: 'Community Leader', avatar: 'https://t4.ftcdn.net/jpg/06/59/13/31/360_F_659133125_S0VAnb5NNknokdB47K61zDsczWgZJTMf.jpg' },
+    { name: 'Piyush Goel', points: 1950, badge: 'Knowledge Sharer', avatar: 'https://t4.ftcdn.net/jpg/06/59/13/31/360_F_659133125_S0VAnb5NNknokdB47K61zDsczWgZJTMf.jpg' }
   ];
 
   const getPostIcon = (type: string) => {

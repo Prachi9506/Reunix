@@ -23,40 +23,53 @@ export default function MentorshipPage() {
   const mentors = [
     {
       id: 1,
-      name: 'John Smith',
-      role: 'Senior Software Engineer at Google',
+      name: 'Prachi Sharma',
+      role: 'Senior Software Engineer at Amazon',
       skills: ['React', 'Node.js', 'System Design', 'Leadership'],
       rating: 4.9,
       sessions: 45,
       experience: '8 years',
       graduationYear: 2015,
-      avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2',
+      avatar: 'https://rocketagency.com.au/wp-content/uploads/2022/05/amazon-logo-300x300.png',
       bio: 'Passionate about helping students transition into tech careers. Specialized in full-stack development and system architecture.',
       availability: 'Weekends'
     },
     {
       id: 2,
-      name: 'Maria Garcia',
+      name: 'Piyush Goel',
       role: 'Product Manager at Microsoft',
       skills: ['Product Strategy', 'Data Analysis', 'Leadership', 'UX Design'],
       rating: 4.8,
       sessions: 32,
       experience: '6 years',
       graduationYear: 2017,
-      avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2',
+      avatar: 'https://images.seeklogo.com/logo-png/16/2/microsoft-logo-png_seeklogo-168319.png',
       bio: 'Former engineer turned product manager. Love helping students understand the product development lifecycle.',
       availability: 'Evenings'
     },
     {
       id: 3,
-      name: 'David Wilson',
-      role: 'Data Scientist at Netflix',
+      name: 'Naitik Gupta',
+      role: 'Product Manager at Microsoft',
+      skills: ['Product Strategy', 'Data Analysis', 'Leadership', 'UX Design'],
+      rating: 4.8,
+      sessions: 32,
+      experience: '6 years',
+      graduationYear: 2017,
+      avatar: 'https://images.seeklogo.com/logo-png/16/2/microsoft-logo-png_seeklogo-168319.png',
+      bio: 'Former engineer turned product manager. Love helping students understand the product development lifecycle.',
+      availability: 'Evenings'
+    },
+    {
+      id: 4,
+      name: 'Payal Goswami',
+      role: 'Data Scientist at Amazon',
       skills: ['Python', 'Machine Learning', 'Statistics', 'SQL'],
       rating: 4.7,
       sessions: 28,
       experience: '5 years',
       graduationYear: 2018,
-      avatar: 'https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2',
+      avatar: 'https://rocketagency.com.au/wp-content/uploads/2022/05/amazon-logo-300x300.png',
       bio: 'Data science enthusiast with experience in recommendation systems and ML at scale.',
       availability: 'Flexible'
     }
@@ -64,18 +77,18 @@ export default function MentorshipPage() {
 
   const myMentorships = [
     {
-      mentor: 'Sarah Johnson',
+      mentor: 'Piyush Goel',
       topic: 'React Development',
       nextSession: 'Tomorrow, 3:00 PM',
       status: 'active',
-      avatar: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2'
+      avatar: 'https://rocketagency.com.au/wp-content/uploads/2022/05/amazon-logo-300x300.png'
     },
     {
-      mentor: 'Michael Chen',
+      mentor: 'Prachi Sharma',
       topic: 'Career Guidance',
       nextSession: 'Dec 28, 2:00 PM',
       status: 'scheduled',
-      avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2'
+      avatar: 'https://rocketagency.com.au/wp-content/uploads/2022/05/amazon-logo-300x300.png'
     }
   ];
 

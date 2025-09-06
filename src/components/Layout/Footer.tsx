@@ -20,7 +20,7 @@ export default function Footer() {
             <div className="flex items-center space-x-2 mb-4">
               <GraduationCap className="h-9 w-9 text-blue-400" />
               <span className="text-2xl font-bold text-white">
-                AlumniConnect
+                ReUnix
               </span>
             </div>
             <p className="mb-3 text-gray-400 leading-relaxed">
@@ -35,7 +35,7 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex space-x-4 mt-6">
               <a
-                href="https://linkedin.com"
+                href="www.linkedin.com/in/prachisharma95"
                 aria-label="LinkedIn"
                 className="p-2 rounded-full bg-gray-800 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 transition"
               >
@@ -49,7 +49,7 @@ export default function Footer() {
                 <Twitter className="h-5 w-5 text-white" />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/Prachi9506"
                 aria-label="GitHub"
                 className="p-2 rounded-full bg-gray-800 hover:bg-gradient-to-r hover:from-gray-600 hover:to-purple-600 transition"
               >
@@ -96,7 +96,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center">
                 <Mail className="h-4 w-4 mr-2 text-blue-400" />{" "}
-                support@alumniconnect.edu
+                support@ReUnix.net
               </div>
               <div className="flex items-center">
                 <MapPin className="h-4 w-4 mr-2 text-blue-400" /> KIET Group of
@@ -140,7 +140,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-gray-800 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between text-sm">
           <p className="text-gray-400">
-            © 2025 AlumniConnect. All rights reserved. | Built for educational
+            © 2025 ReUnix All rights reserved. | Built for educational
             institutions.
           </p>
           <div className="flex space-x-6 mt-3 md:mt-0">

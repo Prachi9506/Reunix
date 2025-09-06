@@ -15,7 +15,11 @@ export default function AlumniDashboard() {
     points: 0
   });
 
+// <<<<<<< second
   const [scale, setScale] = useState({
+// =======
+  const [scale, setScale] = useState({ 
+// >>>>>>> main
     mentorshipSessions: 1,
     eventsHosted: 1,
     studentsHelped: 1,

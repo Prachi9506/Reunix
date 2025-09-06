@@ -136,6 +136,7 @@ export default function LandingPage() {
         </div>
       </section>
 
+<!-- <<<<<<< second -->
       {/* Roadmap Section */}
       <section className="py-20 px-4 bg-gray-100 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto text-center mb-16">
@@ -174,12 +175,7 @@ export default function LandingPage() {
                   <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                   <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
+<!-- ======= -->
       {/* Why Choose Section */}
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto text-center mb-16">
@@ -205,6 +201,79 @@ export default function LandingPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">{feature.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{feature.description}</p>
+<!-- >>>>>>> main -->
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+<!-- <<<<<<< second -->
+      {/* Why Choose Section */}
+      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">Why Choose ReUnix?</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
+            Everything you need to create meaningful connections and accelerate career growth
+          </p>
+          <div className="flex justify-center gap-6 flex-wrap text-sm text-gray-700 dark:text-gray-400 font-medium">
+            <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 rounded-full">Verified Alumni</span>
+            <span className="px-3 py-1 bg-green-100 dark:bg-green-900 rounded-full">AI-Powered</span>
+            <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900 rounded-full">Career Growth</span>
+            <span className="px-3 py-1 bg-orange-100 dark:bg-orange-900 rounded-full">Startup Guidance</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => {
+            const IconComponent = feature.icon;
+            return (
+              <div key={index} className="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
+                <div className={`w-12 h-12 rounded-lg ${feature.color} flex items-center justify-center mb-6 transition-transform`}>
+                  <IconComponent className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">{feature.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{feature.description}</p>
+<!-- ======= -->
+      {/* Roadmap Section */}
+      <section className="py-20 px-4 bg-gray-100 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">Roadmap</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300">
+            Our phased plan to empower students and alumni
+          </p>
+        </div>
+
+        <div className="flex overflow-x-auto md:flex-nowrap gap-8 snap-x snap-mandatory scrollbar-hide max-w-6xl mx-auto px-4">
+          {roadmap.map((item, index) => {
+            const Icon =
+              index === 0 ? Rocket :
+              index === 1 ? Users :
+              Award;
+
+            return (
+              <div
+                key={index}
+                className="bg-white dark:bg-gray-800 rounded-xl shadow-lg flex-shrink-0 snap-center transform hover:scale-105 transition-transform duration-300 w-80"
+              >
+                <div className="relative">
+                  <img
+                    src={`https://picsum.photos/seed/${index}/600/300`}
+                    alt={item.title}
+                    className="w-full h-40 object-cover rounded-t-xl"
+                  />
+                  <div className="absolute top-3 left-3 px-4 py-2 rounded-full text-white font-bold bg-gradient-to-r from-blue-500 to-purple-600 shadow-md">
+                    {item.step}
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className={`w-12 h-12 ${item.color} rounded-full flex items-center justify-center text-white mb-4`}>
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
+                </div>
+<!-- >>>>>>> main -->
               </div>
             );
           })}
