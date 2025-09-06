@@ -15,7 +15,7 @@ export default function AlumniDashboard() {
     points: 0
   });
 
-  const [scale, setScale] = useState({
+  const [scale, setScale] = useState({ 
     mentorshipSessions: 1,
     eventsHosted: 1,
     studentsHelped: 1,
