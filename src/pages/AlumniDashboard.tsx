@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { 
-  Users, Calendar, Briefcase, Award, MessageSquare, Clock, Target, Sun, Moon, X 
+  Users, Calendar, Briefcase, Award, MessageSquare, Clock, Target, X 
 } from 'lucide-react';
+
+type ModalContentType = {
+  title?: string;
+  description?: string;
+  time?: string;
+  participants?: number;
+  type?: 'mentorship' | 'event' | 'job' | 'community' | 'badge';
+  icon?: React.ElementType;
+};
 
 export default function AlumniDashboard() {
   const { user } = useAuth();
-  const [darkMode, setDarkMode] = useState(false);
-  const [activeTab, setActiveTab] = useState('all');
+
+  const [activeTab, setActiveTab] = useState<'all' | 'mentorship' | 'event' | 'job' | 'community'>('all');
+
   const [counters, setCounters] = useState({
     mentorshipSessions: 0,
     eventsHosted: 0,
@@ -15,11 +25,7 @@ export default function AlumniDashboard() {
     points: 0
   });
 
-// <<<<<<< second
   const [scale, setScale] = useState({
-// =======
-  const [scale, setScale] = useState({ 
-// >>>>>>> main
     mentorshipSessions: 1,
     eventsHosted: 1,
     studentsHelped: 1,
@@ -27,7 +33,7 @@ export default function AlumniDashboard() {
   });
 
   const [modalOpen, setModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState<any>(null);
+  const [modalContent, setModalContent] = useState<ModalContentType | null>(null);
 
   const avatars = [
     '/avatars/ananya.png',
@@ -40,19 +46,12 @@ export default function AlumniDashboard() {
     user?.avatar || avatars[Math.floor(Math.random() * avatars.length)]
   );
 
-  // Load theme from localStorage
+  // Update avatar if user changes
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') setDarkMode(true);
-  }, []);
+    setUserAvatar(user?.avatar || avatars[Math.floor(Math.random() * avatars.length)]);
+  }, [user]);
 
-  useEffect(() => {
-    if (darkMode) document.documentElement.classList.add('dark');
-    else document.documentElement.classList.remove('dark');
-    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
-  }, [darkMode]);
-
-  // Counters animation with scale effect
+  // Counters animation using requestAnimationFrame
   useEffect(() => {
     const targetCounters = {
       mentorshipSessions: user?.stats?.mentorshipSessions || 0,
@@ -61,28 +60,30 @@ export default function AlumniDashboard() {
       points: user?.stats?.points || 0
     };
 
-    const interval = setInterval(() => {
+    let animationFrame: number;
+
+    const animateCounters = () => {
       setCounters(prev => {
-        let updated = { ...prev };
+        const updated: any = { ...prev };
         let finished = true;
+
         for (let key in targetCounters) {
           if (prev[key] < targetCounters[key]) {
-            updated[key] = Math.min(prev[key] + Math.ceil(targetCounters[key]/50), targetCounters[key]);
+            updated[key] = Math.min(prev[key] + Math.ceil(targetCounters[key] / 50), targetCounters[key]);
             finished = false;
 
-            // Trigger scale animation
             setScale(prevScale => ({ ...prevScale, [key]: 1.2 }));
-            setTimeout(() => {
-              setScale(prevScale => ({ ...prevScale, [key]: 1 }));
-            }, 150);
+            setTimeout(() => setScale(prevScale => ({ ...prevScale, [key]: 1 })), 150);
           }
         }
-        if (finished) clearInterval(interval);
+
+        if (!finished) animationFrame = requestAnimationFrame(animateCounters);
         return updated;
       });
-    }, 20);
+    };
 
-    return () => clearInterval(interval);
+    animateCounters();
+    return () => cancelAnimationFrame(animationFrame);
   }, [user]);
 
   const stats = [
@@ -114,7 +115,7 @@ export default function AlumniDashboard() {
 
   const filteredActivities = recentActivities.filter(a => activeTab === 'all' || a.type === activeTab);
 
-  const openModal = (content: any) => {
+  const openModal = (content: ModalContentType) => {
     setModalContent(content);
     setModalOpen(true);
   };
@@ -123,6 +124,15 @@ export default function AlumniDashboard() {
     setModalOpen(false);
     setModalContent(null);
   };
+
+  // Close modal on Escape key
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeModal();
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 transition-colors duration-500">
@@ -141,15 +151,9 @@ export default function AlumniDashboard() {
             </div>
           </div>
           <div className="flex items-center space-x-3">
-            <button className="px-3 py-2 bg-blue-600 text-white dark:bg-blue-500 dark:hover:bg-blue-400 rounded hover:bg-blue-700 transition">Schedule Mentorship</button>
-            <button className="px-3 py-2 bg-green-600 text-white dark:bg-green-500 dark:hover:bg-green-400 rounded hover:bg-green-700 transition">Create Event</button>
-            <button className="px-3 py-2 bg-purple-600 text-white dark:bg-purple-500 dark:hover:bg-purple-400 rounded hover:bg-purple-700 transition">Share Resource</button>
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className="flex items-center px-3 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
-            >
-              {darkMode ? <Sun className="w-5 h-5 mr-1" /> : <Moon className="w-5 h-5 mr-1" />}
-            </button>
+            <button className="px-3 py-2 bg-blue-600 text-white dark:bg-blue-500 dark:hover:bg-blue-400 rounded hover:bg-blue-700 transition-all duration-300">Schedule Mentorship</button>
+            <button className="px-3 py-2 bg-green-600 text-white dark:bg-green-500 dark:hover:bg-green-400 rounded hover:bg-green-700 transition-all duration-300">Create Event</button>
+            <button className="px-3 py-2 bg-purple-600 text-white dark:bg-purple-500 dark:hover:bg-purple-400 rounded hover:bg-purple-700 transition-all duration-300">Share Resource</button>
           </div>
         </div>
 
@@ -181,6 +185,7 @@ export default function AlumniDashboard() {
           })}
         </div>
 
+        {/* Recent Activities & Upcoming Events */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Recent Activities */}
           <div className="lg:col-span-2">
@@ -195,7 +200,7 @@ export default function AlumniDashboard() {
                         ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white dark:from-blue-500 dark:to-blue-400 dark:text-white shadow-md'
                         : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gradient-to-r hover:from-blue-100 hover:to-blue-200 dark:hover:from-blue-900 dark:hover:to-blue-800'
                     }`}
-                    onClick={() => setActiveTab(tab)}
+                    onClick={() => setActiveTab(tab as any)}
                   >
                     {tab.charAt(0).toUpperCase() + tab.slice(1)}
                   </button>
@@ -270,7 +275,7 @@ export default function AlumniDashboard() {
       </div>
 
       {/* Modal */}
-      {modalOpen && (
+      {modalOpen && modalContent && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 transition-opacity">
           <div className="bg-white dark:bg-gray-800 rounded-xl p-6 w-11/12 max-w-md relative shadow-lg transition-all duration-300">
             <button 
@@ -281,7 +286,7 @@ export default function AlumniDashboard() {
             </button>
 
             {/* Icon + Badge */}
-            {modalContent?.title && (
+            {modalContent.title && (
               <div className="flex items-center space-x-2 mb-2">
                 {modalContent.icon ? <modalContent.icon className="w-6 h-6 text-gray-600 dark:text-gray-300" /> : null}
                 {modalContent.type && modalContent.type !== 'badge' && (
@@ -298,10 +303,10 @@ export default function AlumniDashboard() {
               </div>
             )}
 
-            {modalContent?.title && <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{modalContent.title}</h3>}
-            {modalContent?.description && <p className="text-gray-700 dark:text-gray-300">{modalContent.description}</p>}
-            {modalContent?.time && <p className="text-sm text-gray-500 dark:text-gray-400 mt-2"><Clock className="inline mr-1" /> {modalContent.time}</p>}
-            {modalContent?.participants && <p className="text-sm text-blue-600 dark:text-blue-400 mt-1"><Users className="inline mr-1" /> {modalContent.participants} participants</p>}
+            {modalContent.title && <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{modalContent.title}</h3>}
+            {modalContent.description && <p className="text-gray-700 dark:text-gray-300">{modalContent.description}</p>}
+            {modalContent.time && <p className="text-sm text-gray-500 dark:text-gray-400 mt-2"><Clock className="inline mr-1" /> {modalContent.time}</p>}
+            {modalContent.participants && <p className="text-sm text-blue-600 dark:text-blue-400 mt-1"><Users className="inline mr-1" /> {modalContent.participants} participants</p>}
           </div>
         </div>
       )}
