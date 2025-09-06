@@ -35,7 +35,7 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex space-x-4 mt-6">
               <a
-                href="https://linkedin.com"
+                href="www.linkedin.com/in/prachisharma95"
                 aria-label="LinkedIn"
                 className="p-2 rounded-full bg-gray-800 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 transition"
               >
@@ -49,7 +49,7 @@ export default function Footer() {
                 <Twitter className="h-5 w-5 text-white" />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/Prachi9506"
                 aria-label="GitHub"
                 className="p-2 rounded-full bg-gray-800 hover:bg-gradient-to-r hover:from-gray-600 hover:to-purple-600 transition"
               >
