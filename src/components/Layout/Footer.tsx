@@ -9,7 +9,7 @@ import {
   Github,
   ArrowRight,
 } from "lucide-react";
-
+//just a check to create pull req
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 relative">
