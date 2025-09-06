@@ -60,3 +60,26 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
+
+/* Body dark mode */
+body {
+  @apply bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+}
+
+/* Cards, tables, sidebar dark mode */
+.card,
+.table-container,
+.sidebar,
+.chart-container {
+  @apply bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100;
+}
+
+/* Table row hover dark mode */
+tr:hover {
+  @apply bg-gray-50 dark:bg-gray-700;
+}
+
+/* Buttons dark mode */
+button {
+  @apply bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded transition;
+}

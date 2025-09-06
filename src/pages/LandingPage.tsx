@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Users, Trophy, Calendar, Briefcase, MessageSquare, Shield,
-  ArrowRight, Star, Rocket, Award
+  ArrowRight, Star, Rocket, Award, Sun, Moon
 } from 'lucide-react';
 
 type CountersType = {
@@ -20,7 +20,18 @@ export default function LandingPage() {
     placement: 0,
   });
 
+  const [darkMode, setDarkMode] = useState<boolean>(false); // Dark mode state
   const [selectedStory, setSelectedStory] = useState<typeof testimonials[0] | null>(null);
+
+  // Toggle dark mode
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    if (!darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
 
   useEffect(() => {
     const target: CountersType = { alumni: 10000, students: 25000, sessions: 500, placement: 95 };
@@ -79,6 +90,17 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-purple-800 dark:from-gray-800 dark:via-gray-900 dark:to-black text-white py-20 px-4 overflow-hidden">
+        
+        {/* Dark mode toggle */}
+        <div className="absolute top-4 right-4 flex items-center gap-2 z-20">
+          <button
+            onClick={toggleDarkMode}
+            className="p-2 rounded-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow hover:scale-110 transition-transform"
+          >
+            {darkMode ? <Sun className="h-5 w-5"/> : <Moon className="h-5 w-5"/>}
+          </button>
+        </div>
+
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fadeInUp">
