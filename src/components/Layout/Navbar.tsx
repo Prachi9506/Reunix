@@ -33,13 +33,14 @@ export default function Navbar() {
     { name: 'Events', href: '/events', icon: Calendar },
     { name: 'Jobs', href: '/jobs', icon: Briefcase },
     { name: 'Community', href: '/community', icon: MessageSquare },
+    { name: 'Success Stories', href: 'https://prachi9506.github.io/Success-Stories-template-can-be-used-in-other-projects-/', icon: User }
   ] : [];
 
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          {/* Logo */}
+          {/* Logo */} 
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <GraduationCap className="h-8 w-8 text-blue-600" />
