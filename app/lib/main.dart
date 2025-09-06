@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:reunix/screens/home_screen.dart';
+import 'package:reunix/screens/Mainnavigation_scrren.dart';
+import 'package:reunix/screens/dashboard_screen.dart';
 import 'package:reunix/screens/login_screen.dart';
 import 'package:reunix/screens/splash_screen.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home': (_) => HomeScreen(),
         '/login':(_) => LoginScreen(),
+        '/mainnavigation':(_) => MainnavigationScrren(),
       },
     );
   }
