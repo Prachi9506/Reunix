@@ -35,12 +35,10 @@ class Mymentorships extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-          itemCount:dummyMentors.length,
-          itemBuilder:(context,idx){
-            return MentorshipCard(mentorship: dummyMentors[idx]);
-      } ),
-    );
+    return ListView.builder(
+        itemCount:dummyMentors.length,
+        itemBuilder:(context,idx){
+          return MentorshipCard(mentorship: dummyMentors[idx]);
+    } );
   }
 }

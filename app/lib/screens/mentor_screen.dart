@@ -29,6 +29,10 @@ class _MentorScreenState extends State<MentorScreen> with SingleTickerProviderSt
         // title: Text("Mentor"),
         toolbarHeight: 0,
         bottom: TabBar(
+          labelColor: Colors.blueAccent,
+          unselectedLabelColor: Colors.grey,
+          indicatorColor: Colors.blueAccent,
+          indicatorWeight: 3,
           controller: _tabController,
             tabs: [
                Tab(text: "Find Mentors",),

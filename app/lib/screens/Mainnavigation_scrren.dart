@@ -32,12 +32,12 @@ class _MainnavigationScrrenState extends State<MainnavigationScrren> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _screens[idx],
-      appBar: AppBar(
-          // actions: [Icon(Icons.groups, size: 100, color: Colors.white),],
-        backgroundColor: Colors.blueAccent,
-         leading: Icon(Icons.school, size: 50, color: Colors.white),
-         title: Text(_title[idx],style: TextStyle(color: Colors.white54,fontWeight: FontWeight.bold),),
-      ),
+      // appBar: AppBar(
+      //     // actions: [Icon(Icons.groups, size: 100, color: Colors.white),],
+      //   // backgroundColor: Colors.blueAccent,
+      //   //  leading: Icon(Icons.school, size: 50, color: Colors.white),
+      //    // title: Text(_title[idx],style: TextStyle(color: Colors.white54,fontWeight: FontWeight.bold),),
+      // ),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: idx,
           selectedItemColor: Colors.blueAccent,
