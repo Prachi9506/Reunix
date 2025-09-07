@@ -47,7 +47,7 @@ export default function Navbar() {
       ]
     : [];
 
-  const renderNavItems = (onClick?: () => void) =>
+  const renderNavItems = (onClick?: () => void) => 
     navItems.map((item) => {
       const Icon = item.icon;
       return (
