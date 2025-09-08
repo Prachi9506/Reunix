@@ -26,20 +26,20 @@ export default function StudentDashboard() {
 
   const recommendedMentors = [
     {
-      name: 'John Smith',
+      name: 'Prachi Sharma',
       role: 'Senior Software Engineer at Google',
       skills: ['React', 'Node.js', 'System Design'],
       rating: 4.9,
       sessions: 25,
-      avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2'
+      avatar: 'https://media.licdn.com/dms/image/v2/D4D03AQEoTUWRrQ324w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1731154787061?e=2147483647&v=beta&t=3cQLjElF69WpBb0c3TsQxqT63uVuDN1IIP2rLlcl1e4'
     },
     {
-      name: 'Maria Garcia',
+      name: 'Payal Goswami',
       role: 'Product Manager at Microsoft',
       skills: ['Product Strategy', 'Data Analysis', 'Leadership'],
       rating: 4.8,
       sessions: 18,
-      avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2'
+      avatar: 'https://media.licdn.com/dms/image/v2/D5603AQHUGYkLjlQSgQ/profile-displayphoto-scale_200_200/B56Zfuuv87HUAc-/0/1752056923840?e=2147483647&v=beta&t=sZ7fYsF4WubAODdgK2VY54ERkChe1bGKgyHXdHDBjXA'
     }
   ];
 

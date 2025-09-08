@@ -71,7 +71,7 @@ export default function RegisterPage() {
         email: formData.email,
         role: formData.role,
         profile: {
-          avatar: `https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2`,
+          avatar: `https://media.licdn.com/dms/image/v2/D4D03AQEoTUWRrQ324w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1731154787061?e=2147483647&v=beta&t=3cQLjElF69WpBb0c3TsQxqT63uVuDN1IIP2rLlcl1e4`,
           bio: '',
           graduationYear: parseInt(formData.graduationYear) || new Date().getFullYear(),
           branch: formData.branch,

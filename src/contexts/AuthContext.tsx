@@ -50,19 +50,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     try {
       const mockUser: User = {
         id: Date.now().toString(),
-        name: role === 'alumni' ? 'John Doe' : role === 'student' ? 'Jane Smith' : 'Admin User',
+        name: role === 'alumni' ? 'Prachi Sharma' : role === 'student' ? 'Prachi Sharma' : 'Admin User',
         email,
         role: role as 'alumni' | 'student' | 'admin',
         profile: {
-          avatar: `https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2`,
+          avatar: `https://media.licdn.com/dms/image/v2/D4D03AQEoTUWRrQ324w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1731154787061?e=2147483647&v=beta&t=3cQLjElF69WpBb0c3TsQxqT63uVuDN1IIP2rLlcl1e4`,
           bio: role === 'alumni' ? 'Senior Software Engineer with 5+ years experience' : 'Computer Science Student',
           company: role === 'alumni' ? 'Tech Corp' : undefined,
           designation: role === 'alumni' ? 'Senior Software Engineer' : undefined,
           graduationYear: role === 'alumni' ? 2018 : 2025,
           branch: 'Computer Science',
           skills: ['React', 'Node.js', 'Python', 'MongoDB'],
-          linkedinUrl: 'https://linkedin.com/in/johndoe',
-          githubUrl: 'https://github.com/johndoe',
+          linkedinUrl: 'https://linkedin.com/in/',
+          githubUrl: 'https://github.com/Prachi9506',
         },
         stats: {
           mentorshipSessions: role === 'alumni' ? 15 : 3,

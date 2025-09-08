@@ -95,7 +95,7 @@ export default function ProfilePage() {
           <div className="relative px-6 pb-6">
             <div className="flex items-end space-x-6 -mt-16">
               <img
-                src={user?.profile?.avatar || `https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2`}
+                src={user?.profile?.avatar || `https://www.google.com/url?sa=i&url=https%3A%2F%2Fin.linkedin.com%2Fin%2Fprachisharma95&psig=AOvVaw2kfsUnNMZ0xCfoUBeA7tPe&ust=1757399851884000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCIiVy-DGyI8DFQAAAAAdAAAAABAE`}
                 alt={user?.name}
                 className="w-32 h-32 rounded-full border-4 border-white object-cover"
               />
