@@ -80,6 +80,6 @@ tr:hover {
 }
 
 /* Buttons dark mode */
-button {
+button { 
   @apply bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded transition;
 }
