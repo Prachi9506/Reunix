@@ -66,21 +66,21 @@ export default function LandingPage() {
 
   const testimonials: Testimonial[] = [
     {
-      name: 'Sarah Johnson',
+      name: 'Prachi Sharma',
       role: 'Software Engineer, Google',
       year: '2019 Graduate',
       content: 'The mentorship I received through Reunix was invaluable. It helped me land my dream job and continues to guide my career growth.',
       avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2'
     },
     {
-      name: 'Michael Chen',
+      name: 'Payal Goswami',
       role: 'Product Manager, Microsoft',
       year: '2017 Graduate',
       content: 'Being able to give back to juniors while expanding my own network has been incredibly rewarding. Reunix makes mentoring seamless.',
       avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2'
     },
     {
-      name: 'Emily Davis',
+      name: 'Piyush Goel',
       role: 'Current Student, CS',
       year: 'Class of 2025',
       content: 'The career guidance and real industry insights from alumni on Reunix have been game-changing for my internship applications.',
@@ -122,7 +122,7 @@ export default function LandingPage() {
 
           <div className="relative">
             <div className="bg-white/10 dark:bg-gray-800/20 backdrop-blur-lg rounded-2xl p-8 shadow-2xl">
-              <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=2" alt="Students learning" className="rounded-lg w-full h-64 sm:h-80 md:h-96 object-cover mb-6"/>
+              <img src="https://www.univariety.com/blog/wp-content/uploads/2022/02/5853-min-scaled.jpg" alt="Students learning" className="rounded-lg w-full h-64 sm:h-80 md:h-96 object-cover mb-6"/>
             </div>
           </div>
         </div>
