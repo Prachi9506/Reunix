@@ -44,6 +44,7 @@ export default function Navbar() {
         { name: "Jobs", href: "/jobs", icon: Briefcase },
         { name: "Community", href: "/community", icon: MessageSquare },
         { name: "Success Stories", href: "https://prachi9506.github.io/Success-Stories-template-can-be-used-in-other-projects-/", icon: User },
+        { name: "Anonymous Reviews", href: "https://reviews-backend-sih.vercel.app/", icon: MessageSquare },
       ]
     : [];
 
