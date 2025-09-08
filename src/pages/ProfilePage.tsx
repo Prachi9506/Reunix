@@ -19,6 +19,7 @@ import {
 export default function ProfilePage() {
   const { user, updateProfile } = useAuth();
   const { addNotification } = useNotification();
+
   const [isEditing, setIsEditing] = useState(false);
   const [editData, setEditData] = useState({
     name: user?.name || '',
@@ -91,152 +92,156 @@ export default function ProfilePage() {
 
   return (
     <>
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 transition-colors duration-300">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 transition-colors duration-300">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          {/* Header */}
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden mb-8 transition-colors duration-300">
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 h-32"></div>
-            <div className="relative px-6 pb-6">
-              <div className="flex items-end space-x-6 -mt-16">
-                <div className="relative">
-                  <img
-                    src={editData.avatar}
-                    alt={user?.name}
-                    className="w-32 h-32 rounded-full border-4 border-white dark:border-gray-700 object-cover cursor-pointer"
-                    onClick={() => setPreviewImage(editData.avatar)}
-                  />
-                  {isEditing && (
-                    <label className="absolute bottom-0 right-0 bg-blue-600 hover:bg-blue-700 p-1 rounded-full cursor-pointer">
-                      <input type="file" accept="image/*" className="hidden" onChange={handleImageChange} />
-                      <Plus className="h-4 w-4 text-white" />
-                    </label>
-                  )}
-                </div>
-                <div className="flex-1 pb-4">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{user?.name}</h1>
-                      <p className="text-gray-600 dark:text-gray-300 capitalize">{user?.role}</p>
-                      {user?.profile?.company && (
-                        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                          {user.profile.designation} at {user.profile.company}
-                        </p>
-                      )}
-                    </div>
-                    <button
-                      onClick={() => setIsEditing(!isEditing)}
-                      className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2"
-                    >
-                      <Edit3 className="h-4 w-4" />
-                      <span>{isEditing ? 'Cancel' : 'Edit Profile'}</span>
-                    </button>
+        {/* Header */}
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden mb-8 transition-colors duration-300">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 h-32"></div>
+          <div className="relative px-6 pb-6">
+            <div className="flex items-end space-x-6 -mt-16">
+              <div className="relative">
+                <img
+                  src={editData.avatar}
+                  alt={user?.name}
+                  className="w-32 h-32 rounded-full border-4 border-white dark:border-gray-700 object-cover cursor-pointer"
+                  onClick={() => setPreviewImage(editData.avatar)}
+                />
+                {isEditing && (
+                  <label className="absolute bottom-0 right-0 bg-blue-600 hover:bg-blue-700 p-1 rounded-full cursor-pointer transition-colors">
+                    <input type="file" accept="image/*" className="hidden" onChange={handleImageChange} />
+                    <Plus className="h-4 w-4 text-white" />
+                  </label>
+                )}
+              </div>
+              <div className="flex-1 pb-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{user?.name}</h1>
+                    <p className="text-gray-600 dark:text-gray-300 capitalize">{user?.role}</p>
+                    {user?.profile?.company && (
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                        {user.profile.designation} at {user.profile.company}
+                      </p>
+                    )}
                   </div>
+                  <button
+                    onClick={() => setIsEditing(!isEditing)}
+                    className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2 ${
+                      isEditing
+                        ? 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500 text-gray-700 dark:text-gray-100'
+                        : 'bg-blue-600 hover:bg-blue-700 text-white'
+                    }`}
+                  >
+                    <Edit3 className="h-4 w-4" />
+                    <span>{isEditing ? 'Cancel' : 'Edit Profile'}</span>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-            {/* Main Content */}
-            <div className="lg:col-span-2 space-y-8">
+          {/* Main Content */}
+          <div className="lg:col-span-2 space-y-8">
 
-              {/* Basic Info */}
-              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 transition-colors duration-300">
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Basic Information</h2>
-                {isEditing ? (
-                  <div className="space-y-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Full Name</label>
-                      <input
-                        type="text"
-                        value={editData.name}
-                        onChange={(e) => setEditData({...editData, name: e.target.value})}
-                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Bio</label>
-                      <textarea
-                        value={editData.bio}
-                        onChange={(e) => setEditData({...editData, bio: e.target.value})}
-                        rows={3}
-                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-                        placeholder="Tell us about yourself..."
-                      />
-                    </div>
-                    {user?.role === 'alumni' && (
-                      <>
-                        <div>
-                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Company</label>
-                          <input
-                            type="text"
-                            value={editData.company}
-                            onChange={(e) => setEditData({...editData, company: e.target.value})}
-                            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Designation</label>
-                          <input
-                            type="text"
-                            value={editData.designation}
-                            onChange={(e) => setEditData({...editData, designation: e.target.value})}
-                            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-                          />
-                        </div>
-                      </>
-                    )}
-                    <div className="flex space-x-4">
-                      <button
-                        onClick={handleSave}
-                        className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2"
-                      >
-                        <Save className="h-4 w-4" />
-                        <span>Save Changes</span>
-                      </button>
-                      <button
-                        onClick={handleCancel}
-                        className="bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500 text-gray-700 dark:text-gray-100 px-4 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2"
-                      >
-                        <X className="h-4 w-4" />
-                        <span>Cancel</span>
-                      </button>
-                    </div>
+            {/* Basic Info */}
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 transition-colors duration-300">
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Basic Information</h2>
+              {isEditing ? (
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Full Name</label>
+                    <input
+                      type="text"
+                      value={editData.name}
+                      onChange={(e) => setEditData({...editData, name: e.target.value})}
+                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-300"
+                    />
                   </div>
-                ) : (
-                  <div className="space-y-4 text-gray-900 dark:text-gray-100">
-                    <div className="flex items-center space-x-3">
-                      <User className="h-5 w-5 text-gray-400 dark:text-gray-300" />
-                      <span>{user?.name}</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Mail className="h-5 w-5 text-gray-400 dark:text-gray-300" />
-                      <span>{user?.email}</span>
-                    </div>
-                    {user?.profile?.company && (
-                      <div className="flex items-center space-x-3">
-                        <Building className="h-5 w-5 text-gray-400 dark:text-gray-300" />
-                        <span>{user.profile.designation} at {user.profile.company}</span>
-                      </div>
-                    )}
-                    <div className="flex items-center space-x-3">
-                      <Calendar className="h-5 w-5 text-gray-400 dark:text-gray-300" />
-                      <span>Class of {user?.profile?.graduationYear}</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <BookOpen className="h-5 w-5 text-gray-400 dark:text-gray-300" />
-                      <span>{user?.profile?.branch}</span>
-                    </div>
-                    {user?.profile?.bio && (
-                      <div className="mt-4">
-                        <p>{user.profile.bio}</p>
-                      </div>
-                    )}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Bio</label>
+                    <textarea
+                      value={editData.bio}
+                      onChange={(e) => setEditData({...editData, bio: e.target.value})}
+                      rows={3}
+                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-300"
+                      placeholder="Tell us about yourself..."
+                    />
                   </div>
-                )}
-              </div>
+                  {user?.role === 'alumni' && (
+                    <>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Company</label>
+                        <input
+                          type="text"
+                          value={editData.company}
+                          onChange={(e) => setEditData({...editData, company: e.target.value})}
+                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-300"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Designation</label>
+                        <input
+                          type="text"
+                          value={editData.designation}
+                          onChange={(e) => setEditData({...editData, designation: e.target.value})}
+                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-300"
+                        />
+                      </div>
+                    </>
+                  )}
+                  <div className="flex space-x-4">
+                    <button
+                      onClick={handleSave}
+                      className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2"
+                    >
+                      <Save className="h-4 w-4" />
+                      <span>Save Changes</span>
+                    </button>
+                    <button
+                      onClick={handleCancel}
+                      className="bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500 text-gray-700 dark:text-gray-100 px-4 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2"
+                    >
+                      <X className="h-4 w-4" />
+                      <span>Cancel</span>
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="space-y-4 text-gray-900 dark:text-gray-100">
+                  <div className="flex items-center space-x-3">
+                    <User className="h-5 w-5 text-gray-400 dark:text-gray-300" />
+                    <span>{user?.name}</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Mail className="h-5 w-5 text-gray-400 dark:text-gray-300" />
+                    <span>{user?.email}</span>
+                  </div>
+                  {user?.profile?.company && (
+                    <div className="flex items-center space-x-3">
+                      <Building className="h-5 w-5 text-gray-400 dark:text-gray-300" />
+                      <span>{user.profile.designation} at {user.profile.company}</span>
+                    </div>
+                  )}
+                  <div className="flex items-center space-x-3">
+                    <Calendar className="h-5 w-5 text-gray-400 dark:text-gray-300" />
+                    <span>Class of {user?.profile?.graduationYear}</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <BookOpen className="h-5 w-5 text-gray-400 dark:text-gray-300" />
+                    <span>{user?.profile?.branch}</span>
+                  </div>
+                  {user?.profile?.bio && (
+                    <div className="mt-4">
+                      <p>{user.profile.bio}</p>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
 
               {/* Skills */}
               <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 transition-colors duration-300">
@@ -445,11 +450,15 @@ export default function ProfilePage() {
 
         {/* Image Preview Modal */}
         {previewImage && (
-          <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+          <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 transition-opacity">
             <div className="relative max-w-lg w-full">
-              <img src={previewImage} alt="Profile Preview" className="rounded-lg max-h-[80vh] mx-auto" />
+              <img
+                src={previewImage}
+                alt="Profile Preview"
+                className="rounded-xl max-h-[80vh] mx-auto shadow-lg border border-gray-200 dark:border-gray-700"
+              />
               <button
-                className="absolute top-2 right-2 bg-gray-200 dark:bg-gray-700 rounded-full p-1 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                className="absolute top-2 right-2 bg-gray-200 dark:bg-gray-700 rounded-full p-1 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors shadow-md"
                 onClick={() => setPreviewImage(null)}
               >
                 <X className="h-5 w-5 text-gray-800 dark:text-gray-200" />

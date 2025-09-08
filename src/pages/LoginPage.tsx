@@ -61,7 +61,7 @@ export default function LoginPage() {
               </Link>
             </div>
             <h1 className="text-3xl font-bold text-gray-900 dark:text-slate-100 mb-2">
-              Welcome Back
+              Hello, ReUnix User!
             </h1>
             <p className="text-gray-600 dark:text-slate-400">
               Log in to continue exploring opportunities.
