@@ -75,7 +75,7 @@ body {
 }
 
 /* Table row hover dark mode */
-tr:hover {
+tr:hover { 
   @apply bg-gray-50 dark:bg-gray-700;
 }
 
