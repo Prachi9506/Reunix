@@ -12,7 +12,7 @@ class _RegisterScreenState extends State<Register> {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController = TextEditingController();
 
-  bool _isLoading = false;
+  // bool _isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -133,16 +133,16 @@ class _RegisterScreenState extends State<Register> {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
       onPressed: onPressed,
-      child: _isLoading
-          ? SizedBox(
-        width: 20,
-        height: 20,
-        child: CircularProgressIndicator(
-          strokeWidth: 2,
-          valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
-        ),
-      )
-          : Text(text, style: const TextStyle(fontSize: 18)),
+      child: //_isLoading
+      //      SizedBox(
+      //   width: 20,
+      //   height: 20,
+      //   child: CircularProgressIndicator(
+      //     strokeWidth: 2,
+      //     valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
+      //   ),
+      // )
+           Text(text, style: const TextStyle(fontSize: 18)),
     );
   }
 }
