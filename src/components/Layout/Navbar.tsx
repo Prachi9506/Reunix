@@ -14,6 +14,7 @@ import {
   Award,
   Sun,
   Moon,
+  ChevronDown,
 } from "lucide-react";
 
 export default function Navbar() {
@@ -36,6 +37,7 @@ export default function Navbar() {
     document.documentElement.classList.toggle("dark", !darkMode);
   };
 
+  // Main navItems
   const navItems = user
     ? [
         { name: "Dashboard", href: "/dashboard", icon: User },
@@ -43,12 +45,26 @@ export default function Navbar() {
         { name: "Events", href: "/events", icon: Calendar },
         { name: "Jobs", href: "/jobs", icon: Briefcase },
         { name: "Community", href: "/community", icon: MessageSquare },
-        { name: "Success Stories", href: "https://prachi9506.github.io/Success-Stories-template-can-be-used-in-other-projects-/", icon: User },
-        { name: "Anonymous Reviews", href: "https://reviews-backend-sih.vercel.app/", icon: MessageSquare },
+        {
+          name: "Success Stories",
+          href: "https://prachi9506.github.io/Success-Stories-template-can-be-used-in-other-projects-/",
+          icon: User,
+        },
+        {
+          name: "Anonymous Reviews",
+          href: "https://reviews-backend-sih.vercel.app/",
+          icon: MessageSquare,
+        },
       ]
     : [];
 
-  const renderNavItems = (onClick?: () => void) => 
+  // Extra dropdown items
+  const moreItems = [
+    { name: "Startup", href: "https://prachi9506.github.io/startup_gdg/", icon: Briefcase },
+    { name: "Career", href: "https://prachi9506.github.io/career-counselling-/", icon: Award },
+  ];
+
+  const renderNavItems = (onClick?: () => void) =>
     navItems.map((item) => {
       const Icon = item.icon;
       return (
@@ -85,6 +101,29 @@ export default function Navbar() {
           {user && (
             <div className="hidden md:flex items-center space-x-8">
               {renderNavItems()}
+
+              {/* More Dropdown */}
+              <div className="relative group">
+                <button className="flex items-center space-x-1 text-gray-700 dark:text-gray-200 hover:text-cyan-600 dark:hover:text-cyan-400">
+                  <span>More</span>
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+                <div className="absolute left-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-50 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200">
+                  {moreItems.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        className="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-cyan-50 dark:hover:bg-cyan-900"
+                      >
+                        <Icon className="h-4 w-4 mr-2" />
+                        {item.name}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           )}
 
@@ -197,6 +236,24 @@ export default function Navbar() {
           <div className="md:hidden" id="mobile-menu">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200 dark:border-gray-700">
               {renderNavItems(() => setIsMenuOpen(false))}
+
+              {/* Mobile More Section */}
+              <div className="mt-2 border-t border-gray-200 dark:border-gray-700 pt-2">
+                {moreItems.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="flex items-center px-3 py-2 text-gray-700 dark:text-gray-200 hover:bg-cyan-50 dark:hover:bg-cyan-900 rounded-md transition-all duration-200 hover:scale-105"
+                    >
+                      <Icon className="h-4 w-4 mr-2" />
+                      {item.name}
+                    </Link>
+                  );
+                })}
+              </div>
 
               {/* Mobile Profile Menu */}
               <div className="mt-2 border-t border-gray-200 dark:border-gray-700 pt-2">
