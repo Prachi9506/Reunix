@@ -15,7 +15,7 @@ class MainnavigationScrren extends StatefulWidget {
 class _MainnavigationScrrenState extends State<MainnavigationScrren> {
   int idx = 0;
   final List<Widget> _screens = [
-    HomeScreen(),
+    AdminDashboard(),
     MentorScreen(),
     EventsScreen(),
     JobsScreen(),

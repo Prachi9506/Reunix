@@ -68,7 +68,7 @@ class PastEventCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
-                  color: Colors.grey.shade100,
+                  color: Colors.black,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: const Text(
@@ -76,7 +76,7 @@ class PastEventCard extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
-                    color: Colors.blueGrey,
+                    color: Colors.yellow,
                   ),
                 ),
               ),

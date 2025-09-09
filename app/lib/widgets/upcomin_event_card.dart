@@ -106,6 +106,7 @@ class UpcominEventCard extends StatelessWidget {
                   onPressed: upmodel.onRegister,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blueGrey[800],
+                    foregroundColor: Colors.blueAccent,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),

@@ -74,7 +74,7 @@ class UpcomingEvent extends StatelessWidget {
           decoration: InputDecoration(
               border: InputBorder.none,
               prefixIcon: Icon(Icons.search),
-              labelText: 'Search by name,skill or company',
+              labelText: 'Search events',
               labelStyle: const TextStyle(color: Colors.blueAccent),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),

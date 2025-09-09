@@ -119,6 +119,10 @@ class JobCard extends StatelessWidget {
                     style: TextStyle(color: Colors.grey[600], fontSize: 12)),
                 ElevatedButton(
                   onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.blueAccent,
+                    backgroundColor: Colors.black,
+                  ),
                   child: const Text("Apply Now"),
                 )
               ],

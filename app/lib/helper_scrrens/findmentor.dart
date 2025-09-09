@@ -16,6 +16,53 @@ class Findmentor extends StatelessWidget {
       experience: 5,
     ),
     Mentor(
+      name: "Naitik Gupta",
+      role: "Software Developer",
+      company: "Microsoft",
+      description:
+      "Enjoys guiding beginners in coding interviews and problem solving. Focused on backend development and cloud solutions.",
+      skills: ["C++", "Java", "Azure"],
+      rating: 4.7,
+      sessions: 30,
+      experience: 5,
+    ),
+
+    Mentor(
+      name: "Payal Goswami",
+      role: "Data Scientist",
+      company: "Google",
+      description:
+      "Loves mentoring students in data science and AI. Experienced in building ML pipelines and data-driven applications.",
+      skills: ["Python", "TensorFlow", "Data Analysis"],
+      rating: 4.8,
+      sessions: 38,
+      experience: 6,
+    ),
+
+    Mentor(
+      name: "Prakhar Srivastav",
+      role: "Frontend Engineer",
+      company: "Meta",
+      description:
+      "Dedicated to helping students master frontend technologies. Expert in creating scalable and accessible web applications.",
+      skills: ["JavaScript", "React", "UI/UX"],
+      rating: 4.6,
+      sessions: 25,
+      experience: 4,
+    ),
+
+    Mentor(
+      name: "Prachi Sharma",
+      role: "Senior Software Engineer",
+      company: "Amazon",
+      description:
+      "Passionate about helping students transition into tech careers. Specialized in full-stack development and system architecture.",
+      skills: ["React", "Node.js", "System Design"],
+      rating: 4.9,
+      sessions: 45,
+      experience: 8,
+    ),
+    Mentor(
       name: "Prachi Sharma",
       role: "Senior Software Engineer",
       company: "Amazon",

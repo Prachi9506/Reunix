@@ -48,6 +48,7 @@ class SavedJobCard extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                 backgroundColor: Colors.blueGrey[800],
+                foregroundColor: Colors.blueAccent,
               ),
               child: const Text("Apply"),
             )

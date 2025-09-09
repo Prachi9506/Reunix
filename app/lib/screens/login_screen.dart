@@ -26,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const Icon(Icons.layers_rounded, size: 100, color: Colors.white),
+                const Icon(Icons.school_outlined, size: 100, color: Color(0xFF00C8E0),),
                 const SizedBox(height: 20),
                 const Text("Welcome Back",
                     style: TextStyle(
@@ -40,10 +40,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     isPassword: true),
                 const SizedBox(height: 30),
                 _buildButton(
-                  _isLoading ? "Signining..." : "Sign In",
-                  _isLoading
-                      ? null // disables button
-                      : () async {
+                  // _isLoading ? "Signining..." :
+                  "Sign In",
+                  // _isLoading
+                  //     ? null // disables button
+     () async {
                     final email = emailController.text.trim();
                     final password = passwordController.text.trim();
 
@@ -55,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       return;
                     }
 
-                    setState(() => _isLoading = true);
+                    // setState(() => _isLoading = true);
 
                       // final auth = Provider.of<AuthProvider>(
                       //     context, listen: false);
@@ -71,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       // } finally {
                       //   if (mounted) setState(() => _isLoading = false);
                       // }
-
+                  Navigator.pushNamed(context, '/mainnavigation');
                   },
                 ),
                 const SizedBox(height: 15),
@@ -124,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
       onPressed: onPressed,
       child: _isLoading
-          ? const SizedBox(
+          ?  SizedBox(
         width: 20,
         height: 20,
         child: CircularProgressIndicator(
@@ -132,7 +133,7 @@ class _LoginScreenState extends State<LoginScreen> {
           valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
         ),
       )
-          : Text(text, style: const TextStyle(fontSize: 18)),
+          : Text(text, style:  TextStyle(fontSize: 18)),
     );
   }
 }
