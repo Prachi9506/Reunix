@@ -1,0 +1,29 @@
+[33mc04ea46[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;33mtag: [m[1;33mv1.0.0[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: checkout: moving from recover-splash to main
+[33m8945eaf[m[33m ([m[1;32mrecover-splash[m[33m)[m HEAD@{1}: checkout: moving from main to recover-splash
+[33mc04ea46[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;33mtag: [m[1;33mv1.0.0[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{2}: rebase (finish): returning to refs/heads/main
+[33mc04ea46[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;33mtag: [m[1;33mv1.0.0[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{3}: pull --rebase origin main (start): checkout c04ea4634d574f3695fa303132c8ff2228779bea
+[33m8945eaf[m[33m ([m[1;32mrecover-splash[m[33m)[m HEAD@{4}: commit: Updating Splash Screen and adding Register Screen
+[33m52349aa[m HEAD@{5}: pull --rebase origin main (finish): returning to refs/heads/main
+[33m52349aa[m HEAD@{6}: pull --rebase origin main (pick): Adding Profile Scrren and Personal Info Page
+[33ma017b41[m HEAD@{7}: pull --rebase origin main (start): checkout a017b411f8c04695e28349e486f1c0be93cd675f
+[33mb6b76bd[m HEAD@{8}: commit: Adding Profile Scrren and Personal Info Page
+[33maa56320[m HEAD@{9}: pull --rebase origin main (finish): returning to refs/heads/main
+[33maa56320[m HEAD@{10}: pull --rebase origin main (pick): Adding Admin DashBoard Screen
+[33m5a458c2[m HEAD@{11}: pull --rebase origin main (start): checkout 5a458c236451a825585044b589c83a69f8d36271
+[33m24e46c3[m HEAD@{12}: commit: Adding Admin DashBoard Screen
+[33m3d5193d[m HEAD@{13}: pull --rebase origin main (finish): returning to refs/heads/main
+[33m3d5193d[m HEAD@{14}: pull --rebase origin main (pick): Adding community Screen and Jobs
+[33m918ef51[m HEAD@{15}: pull --rebase origin main (start): checkout 918ef51d53bb1e6508578777e09858ff190a1b8f
+[33m8e861dc[m HEAD@{16}: reset: moving to HEAD
+[33m8e861dc[m HEAD@{17}: commit: Adding community Screen and Jobs
+[33mfdcb080[m HEAD@{18}: commit: Adding Event Screen
+[33mc9bb64c[m HEAD@{19}: pull origin main --rebase (finish): returning to refs/heads/main
+[33mc9bb64c[m HEAD@{20}: pull origin main --rebase (pick): Adding MentorShip page ,Bottom Navigation Bar
+[33mc27be57[m HEAD@{21}: pull origin main --rebase (start): checkout c27be57888a18838ab39adf2aa09436eb8ed60f2
+[33m644e9b7[m HEAD@{22}: commit: Adding MentorShip page ,Bottom Navigation Bar
+[33m8941f41[m HEAD@{23}: commit: Adding splash Screen and Login Screen
+[33mbb85154[m HEAD@{24}: commit: chore: add cleaned .gitignore for Flutter app
+[33ma8fa205[m HEAD@{25}: checkout: moving from app-initial to main
+[33ma8fa205[m HEAD@{26}: checkout: moving from main to app-initial
+[33ma8fa205[m HEAD@{27}: commit: feat(app): add initial Flutter app inside /app
+[33m2328a50[m HEAD@{28}: clone: from https://github.com/Prachi9506/Reunix.git
