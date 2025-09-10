@@ -62,6 +62,7 @@ export default function Navbar() {
   const moreItems = [
     { name: "Startup", href: "https://prachi9506.github.io/startup_gdg/", icon: Briefcase },
     { name: "Career", href: "https://prachi9506.github.io/career-counselling-/", icon: Award },
+    { name: "AI Chatbot", href: "https://cdn.botpress.cloud/webchat/v3.0/shareable.html?configUrl=https://files.bpcontent.cloud/2025/07/02/12/20250702124622-1P26ESV0.json", icon: Award },
   ];
 
   const renderNavItems = (onClick?: () => void) =>
