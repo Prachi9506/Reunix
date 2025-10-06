@@ -24,7 +24,17 @@ Facilitates connections between students and experienced alumni mentors
 
 ### 🌐 Community Feed & Content  
 - Knowledge-sharing space featuring blogs, videos, and podcasts  
-- Engage with content posted by both students and alumni  
+- Engage with content posted by both students and alumni
+
+### 🧭 Career Counselling  
+- Personalized career guidance through expert sessions and AI-driven insights  
+- Explore diverse career paths with alumni success stories and recommendations  
+- Tools for comparing career fields, expected salaries, and growth opportunities  
+
+### 🚀 Startup Guide  
+- Dedicated hub for student entrepreneurs  
+- Access to alumni investors, mentors, and startup founders  
+- Learn about startup building, pitching, and funding opportunities  
 
 ### 🏆 Success Stories & Leaderboard  
 - Showcase alumni achievements  
